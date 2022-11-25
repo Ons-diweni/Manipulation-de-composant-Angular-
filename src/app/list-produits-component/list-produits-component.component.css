@@ -1,0 +1,10 @@
+.bordure {
+    border-radius: 1mm;
+    border-color: black;
+    border-style: outset;
+    border-width: 1mm;
+}
+
+.color {
+    color: deeppink;
+}

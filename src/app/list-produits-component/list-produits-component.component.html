@@ -1,0 +1,68 @@
+<div class="container mt-7">
+
+
+    <div class="container mt-5" class="bordure" *ngFor="let p of listProduits">
+        <label>  Produit : Produit {{p.idProduit}}  </label> <button id="button" [disabled]="VerifTva(p.tauxTVA)" (click)="updateTVA(p.tauxTVA)"> Afficher TVA </button>
+
+        <!-- <input type="button" value="Afficher TVA"> -->
+        <ul [ngStyle]="{'color':TextColor(p.prixUnitaire),'font-style':TextStyle(p.prixUnitaire),'font-size':TaillePolice(p.prixUnitaire)}">
+            <li> Identifiant: {{p.idProduit}} </li>
+            <li> Code: {{p.code}} </li>
+            <li> Prix unitaire:{{p.prixUnitaire}}</li>
+            <li> Taux TVA: {{p.tauxTVA}}
+                <p class="color">{{message}} </p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<h2 style="text-align:center"> <u> Recherche d'un Produit </u> </h2>
+<div style="text-align:center">
+
+    <label> Code: </label>
+    <input id="input" type="text" [(ngModel)]='myInput'>
+</div>
+
+
+<h2 style="text-align:center"> <u> Ajout d'un Produit </u> </h2>
+<div style="text-align:center">
+    <form>
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> idProduit: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Code: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Libelle: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Prix unitaire : </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> taux Tva: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <button> Ajouter </button>
+    </form>
